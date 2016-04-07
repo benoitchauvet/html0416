@@ -5,12 +5,19 @@
 	<title>Ma page</title>
 	<meta charset="UTF-8"/>	
 	<link rel="stylesheet" type="text/css" href="/css/news.css"/>
+	
 </head>
 <body>
 
 <header>
 	<img src="/images/logo.jpg" alt="logo"/>
 	<h1>La montagne</h1>
+	H<input name="sexe" type="radio"/>
+	F<input name="sexe" type="radio"/>
+	<input type="range" min="1" max="42" value="10" id="rngAge"/>
+	<input type="text" id="txtNom" placeholder="Votre nom..."/>
+	<button id="btnTest">Cliquez moi</button>
+	<span id="lblMessage"></span>
 </header>
 
 <nav>
@@ -131,7 +138,38 @@
 	</ul>
 </footer>
 
-<script type="application/javascript" src="/js/news.js"></script>
+
+	<script type="application/javascript">
+		function afficherNom()
+		{
+			var txtNom = document.getElementById("txtNom");
+			var message = document.getElementById("lblMessage");
+			var rngAge = document.getElementById("rngAge");
+			message.innerHTML = "Bonjour " + txtNom.value + " " + rngAge.value;
+		}
+		
+		window.onload = function(){
+			
+			var btnTest = document.getElementById("btnTest");
+			
+			btnTest.onclick = afficherNom;
+			
+			document.onkeypress = function(evt)
+			{
+				console.log("touche pressée...");
+			  
+				if (evt.ctrlKey == true && evt.altKey == true)
+				{
+					console.log(evt.key);
+				}
+			
+			};
+  
+		};
+		
+	</script>
+	
+	<script type="application/javascript" src="/js/news.js"></script>
 </body>
 </html>
 
