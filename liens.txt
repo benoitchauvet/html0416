@@ -6,3 +6,7 @@ Dimensionnement CSS : http://jsbin.com/runuzuduvu/edit?html,css,output
 
 Positionnement :
 http://jsbin.com/qoqucoceho/edit?html,css,output
+
+Positionnement flottant (float) :
+http://jsbin.com/xafifobali/2/edit?html,css,output
+
