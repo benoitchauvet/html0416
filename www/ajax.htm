@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Ma page</title>
+	<meta charset="UTF-8"/>		
+</head>
+<body>
+
+	<select id="cbxRegions">
+		<option value="0">choisir...</option>
+	</select>
+
+	<select id="cbxDepartements">
+
+	</select>
+	
+	
+	<script type="application/javascript">
+	
+		var cbxRegions = document.getElementById("cbxRegions");
+		
+		var req = new XMLHttpRequest();
+		
+		req.open("GET", "regions.php", true);
+		
+		req.onreadystatechange = function()
+		{
+			if (req.readyState == 4)
+			{
+				var objRegions = JSON.parse(req.responseText);
+				for (var i = 0; i < objRegions.regions.length; i++)
+				{
+					var region = objRegions.regions[i];
+					var opt = document.createElement("option");
+					opt.value = region.id;
+					opt.innerHTML = region.nom;
+					cbxRegions.appendChild(opt);
+				}
+			}
+		}
+		
+		req.send();
+		
+		/*
+		cbxRegions.onchange = function()
+		{
+			console.log(cbxRegions.value);
+		}
+		*/
+	</script>
+	
+</body>
+</html>
