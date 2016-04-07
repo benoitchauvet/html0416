@@ -10,3 +10,10 @@ http://jsbin.com/qoqucoceho/edit?html,css,output
 Positionnement flottant (float) :
 http://jsbin.com/xafifobali/2/edit?html,css,output
 
+Vérifications de compatibilité :
+http://caniuse.com/
+
+W3Schools :
+http://www.w3schools.com/
+
+
