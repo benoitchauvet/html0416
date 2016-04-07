@@ -2,3 +2,7 @@ XAMPP :
 
 https://www.apachefriends.org/fr/index.html
 
+Dimensionnement CSS : http://jsbin.com/runuzuduvu/edit?html,css,output
+
+Positionnement :
+http://jsbin.com/qoqucoceho/edit?html,css,output
