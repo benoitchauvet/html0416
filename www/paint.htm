@@ -59,18 +59,18 @@
         <canvas id="canvas" width="600" height="400"></canvas>
 		
 		<ul id="couleurs">
-			<li><a style="background: rgb(0, 0, 0) none repeat scroll 0% 0%;" href="#" data-couleur="#000000" class="actif">Noir</a></li>
-			<li><a style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" href="#" data-couleur="#ffffff">Blanc</a></li>
-			<li><a style="background: rgb(255, 0, 0) none repeat scroll 0% 0%;" href="#" data-couleur="#ff0000">Rouge</a></li>
-			<li><a style="background: brown none repeat scroll 0% 0%;" href="#" data-couleur="brown">Marron</a></li>
-			<li><a style="background: orange none repeat scroll 0% 0%;" href="#" data-couleur="orange">Orange</a></li>
-			<li><a style="background: yellow none repeat scroll 0% 0%;" href="#" data-couleur="yellow">Jaune</a></li>
-			<li><a style="background: green none repeat scroll 0% 0%;" href="#" data-couleur="green">Vert</a></li>
-			<li><a style="background: cyan none repeat scroll 0% 0%;" href="#" data-couleur="cyan">Cyan</a></li>
-			<li><a style="background: blue none repeat scroll 0% 0%;" href="#" data-couleur="blue">Bleu</a></li>
-			<li><a style="background: indigo none repeat scroll 0% 0%;" href="#" data-couleur="indigo">Indigo</a></li>
-			<li><a style="background: Violet none repeat scroll 0% 0%;" href="#" data-couleur="Violet">Violet</a></li>
-			<li><a style="background: pink none repeat scroll 0% 0%;" href="#" data-couleur="pink">Rose</a></li>
+			<li><a href="#" data-couleur="#000000" class="actif">Noir</a></li>
+			<li><a href="#" data-couleur="#ffffff">Blanc</a></li>
+			<li><a href="#" data-couleur="#ff0000">Rouge</a></li>
+			<li><a  href="#" data-couleur="brown">Marron</a></li>
+			<li><a  href="#" data-couleur="orange">Orange</a></li>
+			<li><a  href="#" data-couleur="yellow">Jaune</a></li>
+			<li><a  href="#" data-couleur="green">Vert</a></li>
+			<li><a  href="#" data-couleur="cyan">Cyan</a></li>
+			<li><a  href="#" data-couleur="blue">Bleu</a></li>
+			<li><a  href="#" data-couleur="indigo">Indigo</a></li>
+			<li><a  href="#" data-couleur="Violet">Violet</a></li>
+			<li><a  href="#" data-couleur="hotpink">Rose</a></li>
 		</ul>
 		
 		<form id="largeurs_pinceau">
@@ -131,9 +131,12 @@
 			};
 			
 			// Relachement du Click sur tout le document, j'arrête de dessiner :
-			document.onmouseup = function() {
+			document.onmouseup = function(e) {
+				if (e.button == 0)
+				{
 				painting = false;
 				started = false;
+				}
 			};
 			
 			// Mouvement de la souris sur le canvas :
@@ -145,27 +148,23 @@
 					cursorY = (e.pageY - this.offsetTop) - 10;
 					
 					// Dessine une ligne :
-					drawLine();
-				}
-			};
-			
-			// Fonction qui dessine une ligne :
-			function drawLine() {
-				// Si c'est le début, j'initialise
-				if (!started) {
+					if (!started) {
 					// Je place mon curseur pour la première fois :
 					context.beginPath();
 					context.moveTo(cursorX, cursorY);
 					started = true;
-				} 
-				// Sinon je dessine
-				else {
-					context.lineTo(cursorX, cursorY);
-					context.strokeStyle = color;
-					context.lineWidth = width_brush;
-					context.stroke();
+					} 
+					// Sinon je dessine
+					else {
+						context.lineTo(cursorX, cursorY);
+						context.strokeStyle = color;
+						context.lineWidth = width_brush;
+						context.stroke();
+					}
 				}
-			}
+			};
+			
+			
 			
 			// Clear du Canvas :
 			function clear_canvas() {
@@ -215,7 +214,7 @@
 			$("#save").click(function() {
 				//var r = new FileReader();
 				var img = new Image();
-				img.src = canvas.toDataURL("image/png");
+				img.src = canvas.toDataURL("image/jpg");
 				
 				console.log(img.src);
 				$("body").append(img);

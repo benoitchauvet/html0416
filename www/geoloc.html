@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+<p id="message"></p>
+
+<script type="application/javascript">
+
+
+function afficherPosition(p)
+{
+	var msg = document.getElementById("message");
+  msg.innerHTML = p.coords.latitude + " - " + p.coords.longitude + " - "  + p.coords.altitude + " - " + p.coords.accuracy;
+  
+}
+
+function erreur()
+{
+  console.log("Echec localisation...");
+}
+
+
+navigator.geolocation.getCurrentPosition(afficherPosition, erreur);
+
+
+</script>
+</body>
+</html>

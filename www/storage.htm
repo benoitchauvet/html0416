@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		
+	</head>
+	
+	<body>
+		
+		
+	
+		<input value="#000000" id="colSelect" type="color">
+		<input onclick="coul()" value="enregistrer couleur" type="button">
+	
+		<script>
+			
+			var storage = window.localStorage;
+		
+			if (storage.couleur)
+			{
+				console.log(storage.couleur);
+				document.getElementById("colSelect").value = storage.couleur;
+			}
+		
+			function coul()
+			{
+				if (storage)
+				{
+					storage.couleur = document.getElementById("colSelect").value;
+					console.log("couleur enregistrée");
+				}
+				else
+				{
+					console.log ("storage non supporté");			
+				}
+			}
+		
+		</script>
+	
+	
+	
+</body></html>
