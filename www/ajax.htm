@@ -10,6 +10,8 @@
 	<select id="cbxRegions">
 		<option value="0">choisir...</option>
 	</select>
+	
+	<img src="images/wait.gif" style="visibility:hidden;width:24px;" id="wait"/>
 
 	<select id="cbxDepartements">
 
@@ -19,6 +21,8 @@
 	<script type="application/javascript">
 	
 		var cbxRegions = document.getElementById("cbxRegions");
+		var cbxDepartements = document.getElementById("cbxDepartements");
+		var imgWait = document.getElementById("wait");
 		
 		var req = new XMLHttpRequest();
 		
@@ -42,12 +46,42 @@
 		
 		req.send();
 		
-		/*
+		
 		cbxRegions.onchange = function()
 		{
-			console.log(cbxRegions.value);
+			imgWait.style.visibility = "visible";
+			
+			var codeRegion = cbxRegions.value;
+			var url = "departements.php?region=" + codeRegion;
+			
+			var req2 = new XMLHttpRequest();
+			
+			req2.open("GET", url, true);
+			
+			req2.onreadystatechange = function()
+			{
+				if(req2.readyState == 4)
+				{
+					var objDept = JSON.parse(req2.responseText);
+					
+					cbxDepartements.innerHTML = "";
+					
+					for (var i=0; i < objDept.departements.length; i++)
+					{
+						var dept = objDept.departements[i];
+						
+						var opt = document.createElement("option");
+						opt.value = dept.id;
+						opt.innerHTML = dept.nom;
+						cbxDepartements.appendChild(opt);
+					}
+					imgWait.style.visibility = "hidden";
+				}
+			}
+			
+			req2.send();
 		}
-		*/
+		
 	</script>
 	
 </body>

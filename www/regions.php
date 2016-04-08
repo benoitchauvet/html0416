@@ -1,7 +1,7 @@
 <?php
 // content type JSON :
 header('Content-type: application/json; charset=utf-8');
-sleep(4);
+//sleep(4);
 
 echo '{"regions": [
 		{ "id":"fc", "nom":"Franche Comte" },
