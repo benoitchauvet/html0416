@@ -13,9 +13,11 @@ http://jsbin.com/xafifobali/2/edit?html,css,output
 Vérifications de compatibilité :
 http://caniuse.com/
 
-W3Schools :
+W3School:
 http://www.w3schools.com/
 
 choix des balises sémantiques :
 http://html5doctor.com/downloads/h5d-sectioning-flowchart.png
 
+3js :
+http://alteredqualia.com/

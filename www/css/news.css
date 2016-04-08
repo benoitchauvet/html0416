@@ -1,23 +1,213 @@
-article
+	
+	*{
+        margin:0;
+        padding:0;
+    }
+
+    
+    body
+        {
+        background-image:url('/images/bg.jpg');
+        font-family:Calibri;
+        color:aliceblue;
+    }
+
+    a{
+        color:inherit;
+        text-decoration:none;
+    }
+
+#main
 {
-	border:1px solid #000;
-	margin:10px;
-	padding:10px;
+	width:1000px;
+	margin:auto;
 }
 
-section
+#main>header
 {
-	background-color:#888;
-	margin:10px;
-	padding:10px;
+	border-radius: 10px 10px 0px 0px;
+    background-color:#3b62a1;
+    padding:10px;
+    text-shadow:16px 5px 4px #c9bb26;
 }
 
-.toto
+#main>header h1
 {
-	background-color:red;
+    margin:0;
 }
 
+#main>nav
+{
+    background-color:#5688d8;
+    padding:10px;
+}
+
+#main>nav>ul
+    {
+        margin:0;
+        padding:0;
+    }
+
+    #main>nav>ul>li
+    {
+        display:inline;
+        list-style-type: none;
+        margin-right:10px;
+    }
+
+#main>section
+{
+    background-color:rgba(124, 174, 254, 0.8);
+    min-height:150px;
+}
+
+    
+
+#main>section header{
+    padding:10px;
+}
+
+#main>section footer {
+        clear: both;
+        padding:10px;
+    }
+
+section {
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+@keyframes rebond
+{
+    0%
+    {
+        left:0;
+        top:0;
+    }
+    20%
+    {
+        left:20%;
+        top:80%;
+    }
+    40%
+    {
+        left:40%;
+        top:30%;
+    }
+    60%
+    {
+        left:60%;
+        top:80%;
+    }
+    80%
+    {
+        left:80%;
+        top:60%;
+    }
+    100%
+    {
+        left:100%;
+        top:100%;
+    }
+
+}
+
+#baballe{
+
+     animation:rebond 3s ease;
+}
+
+#baballe{
+    z-index:10000;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    position:fixed;
+   
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
+background: #959595; /* Old browsers */
+background: -moz-linear-gradient(top,  #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
 
 
+}
+
+article:hover
+{
+    -transform:rotateY(40deg);
+    height:350px;
+    background-color:#1a00ff;
+}
+
+article{
+    background-color:#ff0000;
+    transition: all 2s;
+    border-radius:5px;
+    margin-left:10px;
+    margin-bottom:10px;
+    float:left;
+    width:298px;
+    height:250px;
+    padding:10px;
+    line-height:1.2em;
+    text-align:justify;
+    overflow:hidden;
+    border:1px solid aliceblue;
+
+    /*border-style: solid;
+    border-width: 27px;
+    -moz-border-image: url(http://www.w3.org/TR/css3-background/border.png) 27 round;
+    -webkit-border-image: url(http://www.w3.org/TR/css3-background/border.png) 27 round;
+    -o-border-image: url(http://www.w3.org/TR/css3-background/border.png) 27 round;
+    border-image: url(http://www.w3.org/TR/css3-background/border.png) 27 fill round;*/
+}
+
+    /*article:nth-child(even) {
+        -moz-transform: rotate(16deg) scale(0.7) ;
+        -ms-transform: rotate(16deg) scale(0.7) ;
+        -o-transform: rotate(16deg) scale(0.7) ;
+        -webkit-transform: rotate(16deg) scale(0.7) ;
+        transform: rotate(16deg) scale(0.7) ;
+    }*/
+
+article img
+{
+    float:left;
+    margin:2px;
+}
+
+#main>footer
+{
+    border-radius: 0px 0px 10px 10px;
+    background-color:#3b62a1;
+    height:40px;
+}
+
+hr{
+    color:aliceblue;
+}
+
+@media print
+{
+	
+	nav
+	{
+		display:none;
+	}
+	
+	article
+	{
+	box-sizing:border-box;
+		float:initial;
+		width:90%;
+		height:auto;
+	}
+	
+}
 
 
